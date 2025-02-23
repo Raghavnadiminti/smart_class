@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { View, Text, FlatList, TouchableOpacity, Button, StyleSheet } from 'react-native';
-
+import { DataContext } from './context'
 const AttendancePage = () => {
-  
-  const students = ['Raghav', 'mohith Malla', ' Johnson', 'Surya medisetty'];
+  const { data, loading, error } = useContext(DataContext);
+
+  const students =data.class.students; 
 
   
   const [attendance, setAttendance] = useState(
